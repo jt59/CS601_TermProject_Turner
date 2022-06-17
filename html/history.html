@@ -9,154 +9,160 @@
         @import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
     </style>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul class = "nav_links">
-                <li><a href = "../index.html">Welcome</a></li>
-                <li><a href = "history.html">History</a></li>
-                <li><a href = "san_pedro.html" >San Pedro</a></li>
-                <li><a href = "caves_branch.html">Caves Branch</a></li>
-                <li><a href = "gallery.html">Gallery</a></li> 
-            </ul>
-        </nav>
-    </header>
+    <div id="app">
+        <header>
+            <nav>
+                <ul class = "nav_links">
+                    <li><a href = "../index.html">Welcome</a></li>
+                    <li><a href = "history.html">History</a></li>
+                    <li><a href = "san_pedro.html" >San Pedro</a></li>
+                    <li><a href = "caves_branch.html">Caves Branch</a></li>
+                    <li><a href = "gallery.html">Gallery</a></li>
+                    <li><a href = "contact_form.html">Contact</a></li> 
+                    <li><a href = "weather.html">Weather</a></li> 
+                </ul>
+            </nav>
+        </header>
 
-    <div class = "wrapper">
+        <div class = "wrapper">
 
-    <h1>History of Belize</h1>
+        <h1>History of Belize</h1>
 
-    <article>
-        <section class = "grid-container">
-            <div class = "grid-item">
-                <figure>
-                    <img src = "../images/history_border.jpg" alt="Disputed Belizean Border" width="150" height="200">
-                    <figcaption>Disputed Belizean Border</figcaption>
-                </figure>
-            </div>
-            <div class = "grid-item">
-                <figure>
-                    <img src = "../images/history_map.png" alt="Map of Belize" width="150" height="200">
-                    <figcaption>Map of Belize</figcaption>
-                </figure>
-            </div>
-            <div class = "grid-item">
-            <header><h2>Geography</h2></header>
-            <p>Belize is located west of Guatamela, and borders both Guatemala and Mexico. An interesting fact
-                that I learned on my trip is that, due to convoluted political technicalities, Guatemala recognizes the southern
-                half of Belize as Guatemalan territory. Allegedly, children in Guatemalan schools are taught that the border
-                of Guatemala extends all the way to the Caribbean, as shown in the table. To read more, check out this 
-                article: 
-                <a href="https://blogs.lse.ac.uk/latamcaribbean/2019/04/08/belizes-referendum-on-its-territorial-dispute-with-guatemala-could-finally-bring-an-end-to-central-americas-most-enduring-conflict/">Belizean-Guatemalan Border Dispute</a></p>
-            </div>
-        </section>
-
-        <section class = "grid-container"> 
-            <div class = "grid-item">
-                <div>
+        <article class = "grid-container">
+            <section>
+                <div class = "grid-item">
                     <figure>
-                        <img src = "../images/history_lamanai.jpg" alt="A Mayan Ruin Site in Lamanai" width="350" height="250">
-                        <figcaption>A Mayan Ruin Site in Lamanai</figcaption>
+                        <img :src = "images[2].src" :alt="images[2].alt">
+                        <figcaption>{{images[2].alt}}</figcaption>
                     </figure>
-                  </div>
-            </div>
-            <div class = "grid-item">
-                <header><h2>Mayan Empire</h2></header>
-                <p>
-                    The Maya lived in what is current day Belize for centuries before the arrival of Europeans. They left behind 
-                    numerous major ruin sites including La Milpa, Xunantunich, Altun Ha, and Caracol. In the 16th and 17th centuries, the Spanish invaded
-                    and claimed the territory as their own. While Carter and I were staying in San Pedro, we took a boat back to the mainland to visit a 
-                    Mayan ruin site called Lamamai, which translates to "submerged crocodile". Read more about Lamanai here:
-                    <a href="https://www.visitcentroamerica.com/en/visitar/lamanai/">Lamanai</a> 
-                </p>
-                <p>
-                    Archeologists have divided the evolution of Maya culture into 9 distinct periods, shown below. Lamanai was at its height during the Early and Late Classic Maya period.
-                </p>
-            </div>
-        </section>
+                </div>
+                <div class = "grid-item">
+                    <figure>
+                        <img :src = "images[3].src" :alt="images[3].alt">
+                        <figcaption>{{images[3].alt}}</figcaption>
+                    </figure>
+                </div>
+                <div class = "grid-item">
+                <header><h2>Geography</h2></header>
+                <p>Belize is located west of Guatamela, and borders both Guatemala and Mexico. An interesting fact
+                    that I learned on my trip is that, due to convoluted political technicalities, Guatemala recognizes the southern
+                    half of Belize as Guatemalan territory. Allegedly, children in Guatemalan schools are taught that the border
+                    of Guatemala extends all the way to the Caribbean, as shown in the table. To read more, check out this 
+                    article: 
+                    <a href="https://blogs.lse.ac.uk/latamcaribbean/2019/04/08/belizes-referendum-on-its-territorial-dispute-with-guatemala-could-finally-bring-an-end-to-central-americas-most-enduring-conflict/">Belizean-Guatemalan Border Dispute</a></p>
+                </div>
+            </section>
 
-        <section class = "grid-container">
-            <div class = "grid-item">
-            <table>
-                <tr>
-                  <th><p>Period</p></th>
-                  <th><p>Time Range</p></th>
-                </tr>
-                <tr>
-                  <td>Olmec</td>
-                  <td>1200-1000 B.C.</td>
-                </tr>
-                <tr>
-                  <td>Early Preclassic Maya</td>
-                  <td>1800-900 B.C.</td>
-                </tr>
-                <tr>
-                    <td>Middle Preclassic Maya</td>
-                    <td>900-300 B.C.</td>
-                </tr>
-                <tr>
-                    <td>Late Preclassic Maya</td>
-                    <td>300 B.C. - A.D. 250</td>
-                </tr>
-                <tr>
-                    <td>Early Classic Maya</td>
-                    <td>A.D. 250-600</td>
-                </tr>
-                <tr>
-                    <td>Late Classic Maya</td>
-                    <td>A.D. 600-900</td>
-                </tr>
-                <tr>
-                    <td>Post Classic Maya</td>
-                    <td>A.D. 900-1500</td>
-                </tr>
-                <tr>
-                    <td>Colonial Period</td>
-                    <td>A.D. 1500-1800</td>
-                </tr>
-                <tr>
-                    <td>Independent Mexico</td>
-                    <td>A.D. 1821 to Present</td>
-                </tr>
-              </table>
-            </div>
-        </section>
-        
-        <section class = "grid-container">
-            <div class = "grid-item">
-            <header><h2>British Occupation</h2></header>
-            <p>
-                British buccaneers and loggers began settling in Belize in the mid-17th century. Spain retained sovereginty for a few decades,
-                although a growing British population led to increased political tensions between the European powers. The British overcame
-                the Spanish in 1798, and Belize became a "settlement" of Britain, which was politically distinct from a colony. Belize became the official British colony 
-                of British Honduras in 1862; however, Guatemala challenged British occupation on the grounds that it had inherited Spanish intersts in the area. 
-                Read more about the history of Belize here:
-                <a href="https://www.britannica.com/place/Belize/Early-history">Belizean History</a> 
-            </p>
-            </div>
-        </section>
-        <section class = "grid-container">
-            <div class = "grid-item">
-            <header><h2>Belizean Independence</h2></header>
-            <p>
-                Belize appealed its case for self-determination to the United Nations in the 1970s. Although the border dispute with Guatemala remained 
-                unresolved, Belize gained indpendence on Septembet 21st, 1981. The British military retained a presence in Belize in order to 
-                reinforce the established border between Guatemala and Belize until 1994, when the Belize Defense Force gained full responsibility 
-                of border security. Read more about Belizean independence here:
-                <a href="https://www.britannica.com/place/Belize/Independence">Belizean Independence</a>
-            </p>
-            </div>
-        </section>
-    </article>
-        <br>
-        <p><i>Sources:</i></p>
-        <cite>https://www.britannica.com/place/Belize/Early-history</cite><br>
-        <cite>https://blogs.lse.ac.uk/latamcaribbean/2019/04/08/belizes-referendum-on-its-territorial-dispute-with-guatemala-could-finally-bring-an-end-to-central-americas-most-enduring-conflict/</cite><br>
-        <cite>https://geology.com/world/belize-satellite-image.shtml</cite>
-    <footer>
-        <p>©2022. Jillian Turner. All Rights Reserved.</p>
-    </footer>
+            <section> 
+                <div class = "grid-item">
+                    <div>
+                        <figure>
+                            <img :src = "images[4].src" :alt="images[4].alt">
+                            <figcaption>{{images[4].alt}}</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class = "grid-item">
+                    <header><h2>Mayan Empire</h2></header>
+                    <p>
+                        The Maya lived in what is current day Belize for centuries before the arrival of Europeans. They left behind 
+                        numerous major ruin sites including La Milpa, Xunantunich, Altun Ha, and Caracol. In the 16th and 17th centuries, the Spanish invaded
+                        and claimed the territory as their own. While Carter and I were staying in San Pedro, we took a boat back to the mainland to visit a 
+                        Mayan ruin site called Lamamai, which translates to "submerged crocodile". Read more about Lamanai here:
+                        <a href="https://www.visitcentroamerica.com/en/visitar/lamanai/">Lamanai</a> 
+                    </p>
+                    <p>
+                        Archeologists have divided the evolution of Maya culture into 9 distinct periods, shown below. Lamanai was at its height during the Early and Late Classic Maya period.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <div class = "grid-item">
+                <table>
+                    <tr>
+                    <th><p>Period</p></th>
+                    <th><p>Time Range</p></th>
+                    </tr>
+                    <tr>
+                    <td>Olmec</td>
+                    <td>1200-1000 B.C.</td>
+                    </tr>
+                    <tr>
+                    <td>Early Preclassic Maya</td>
+                    <td>1800-900 B.C.</td>
+                    </tr>
+                    <tr>
+                        <td>Middle Preclassic Maya</td>
+                        <td>900-300 B.C.</td>
+                    </tr>
+                    <tr>
+                        <td>Late Preclassic Maya</td>
+                        <td>300 B.C. - A.D. 250</td>
+                    </tr>
+                    <tr>
+                        <td>Early Classic Maya</td>
+                        <td>A.D. 250-600</td>
+                    </tr>
+                    <tr>
+                        <td>Late Classic Maya</td>
+                        <td>A.D. 600-900</td>
+                    </tr>
+                    <tr>
+                        <td>Post Classic Maya</td>
+                        <td>A.D. 900-1500</td>
+                    </tr>
+                    <tr>
+                        <td>Colonial Period</td>
+                        <td>A.D. 1500-1800</td>
+                    </tr>
+                    <tr>
+                        <td>Independent Mexico</td>
+                        <td>A.D. 1821 to Present</td>
+                    </tr>
+                </table>
+                </div>
+            </section>
+            
+            <section>
+                <div class = "grid-item">
+                <header><h2>British Occupation</h2></header>
+                <p>
+                    British buccaneers and loggers began settling in Belize in the mid-17th century. Spain retained sovereginty for a few decades,
+                    although a growing British population led to increased political tensions between the European powers. The British overcame
+                    the Spanish in 1798, and Belize became a "settlement" of Britain, which was politically distinct from a colony. Belize became the official British colony 
+                    of British Honduras in 1862; however, Guatemala challenged British occupation on the grounds that it had inherited Spanish intersts in the area. 
+                    Read more about the history of Belize here:
+                    <a href="https://www.britannica.com/place/Belize/Early-history">Belizean History</a> 
+                </p>
+                </div>
+            </section>
+            <section>
+                <div class = "grid-item">
+                <header><h2>Belizean Independence</h2></header>
+                <p>
+                    Belize appealed its case for self-determination to the United Nations in the 1970s. Although the border dispute with Guatemala remained 
+                    unresolved, Belize gained indpendence on Septembet 21st, 1981. The British military retained a presence in Belize in order to 
+                    reinforce the established border between Guatemala and Belize until 1994, when the Belize Defense Force gained full responsibility 
+                    of border security. Read more about Belizean independence here:
+                    <a href="https://www.britannica.com/place/Belize/Independence">Belizean Independence</a>
+                </p>
+                </div>
+            </section>
+        </article>
+            <br>
+            <p><i>Sources:</i></p>
+            <cite>https://www.britannica.com/place/Belize/Early-history</cite><br>
+            <cite>https://blogs.lse.ac.uk/latamcaribbean/2019/04/08/belizes-referendum-on-its-territorial-dispute-with-guatemala-could-finally-bring-an-end-to-central-americas-most-enduring-conflict/</cite><br>
+            <cite>https://geology.com/world/belize-satellite-image.shtml</cite>
+        <footer>
+            <p>©2022. Jillian Turner. All Rights Reserved.</p>
+        </footer>
+        </div>
     </div>
+    <script src="../js/script.js"></script>
 </body>
 </html>

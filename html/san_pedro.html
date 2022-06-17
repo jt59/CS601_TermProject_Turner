@@ -9,92 +9,87 @@
         @import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
     </style>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
-    <header class = "nav">
-        <nav>
-            <ul class = "nav_links">
-                <li><a href = "../index.html">Welcome</a></li>
-                <li><a href = "history.html">History</a></li>
-                <li><a href = "san_pedro.html" >San Pedro</a></li>
-                <li><a href = "caves_branch.html">Caves Branch</a></li>
-                <li><a href = "gallery.html">Gallery</a></li>  
-            </ul>
-        </nav>
-    </header>
+    <div id="app">
+        <header class = "nav">
+            <nav>
+                <ul class = "nav_links">
+                    <li><a href = "../index.html">Welcome</a></li>
+                    <li><a href = "history.html">History</a></li>
+                    <li><a href = "san_pedro.html" >San Pedro</a></li>
+                    <li><a href = "caves_branch.html">Caves Branch</a></li>
+                    <li><a href = "gallery.html">Gallery</a></li>
+                    <li><a href = "contact_form.html">Contact</a></li>
+                    <li><a href = "weather.html">Weather</a></li>  
+                </ul>
+            </nav>
+        </header>
 
-    <div class = "wrapper">
-    <h1>San Pedro</h1>
+        <div class = "wrapper">
+        <h1>San Pedro</h1>
 
-    <article>
-        <section class = "grid-container">
-            <div class = "grid-item">
-                <figure>
-                    <img src = "../images/san_pedro_ramons.png" alt="Me at Ramon's" width="300" height="300">
-                    <figcaption>Me at Ramon's</figcaption>
-                </figure>
-            </div>
-            <div class = "grid-item">
-                <header><h2>Ramon's Village</h2></header>
-            
-                <p>
-                    In San Pedro, we stayed at a dive resort called Ramon's Village. We did a lot of diving on the local reef, which was about a 5-minute 
-                    boatride away from Ramon's dock. Additional dive sites we explored were the Blue Hole and Half Moon Caye, which took about 2.5 hours 
-                    by boat. When we weren't diving, Carter and I had fun exploring the rest of the island, and the surrounding islands.
-                </p>
-            </div>
-        </section>
-        <section class = "grid-container">
-            <div class = "grid-item">
-                <figure>
-                    <video width="320" height="240" controls>
-                        <source src="../videos/san_pedro_shark.mov" type="video/mp4">
-                      Your browser does not support the video tag.
-                    </video>
-                    <figcaption>Me swimming with a reef shark</figcaption>
-                </figure>
-            </div>
-            <div class = "grid-item">
-            <header><h2>Diving</h2></header>
-                <p>
-                    I was very surprised by the number of sharks we saw while diving in Belize! Luckily they were primarily Nurse and Reef sharks, which were 
-                    generally friendly and uninterested in humans. We saw lots of other types of aquatic life, including
-                </p>
-                    <ul>
-                        <li>stingrays</li>
-                        <li>green sea turtles</li>
-                        <li>loggerhead turtles</li>
-                        <li>garden eels</li>
-                        <li>moray eels</li>
-                        <li>lots of tropical fish</li>
-                        <li>lobsters</li>
-                        <li>crabs</li>
-                    </ul>
+        <article class = "grid-container">
+            <section>
+                <div class = "grid-item">
+                    <figure>
+                        <img :src="images[5].src" :alt="images[5].alt">
+                        <figcaption>{{images[5].alt}}</figcaption>
+                    </figure>
+                </div>
+                <div class = "grid-item">
+                    <header><h2>Ramon's Village</h2></header>
                 
-            </div>
-        </section>
-        <section class = "grid-container">
-            <div class = "grid-item">
-                <figure>
-                    <video width="320" height="240" controls>
-                        <source src="../videos/san_pedro_caye_caulker.mov" type="video/mp4">
-                      Your browser does not support the video tag.
-                    </video>
-                    <figcaption>Jumping into the water at The Split</figcaption>
-                </figure>
-            </div>
-            <div class = "grid-item">
-            <header><h2>Caye Caulker</h2></header>
-               <p>
-                One morning, we took a water taxi to the nearby island Caye Caluker. Years ago, a hurricane physically split the island into a north and a south side.
-                The resulting water gap between the two sides of the island is called The Split. Here's a video of me jumping off a platform into The Split!
-               </p> 
-            </div>
-        </section>
-    </article>
-    <footer>
-        <p>©2022. Jillian Turner. All Rights Reserved.</p>
-    </footer>
+                    <p>
+                        In San Pedro, we stayed at a dive resort called Ramon's Village. We did a lot of diving on the local reef, which was about a 5-minute 
+                        boatride away from Ramon's dock. Additional dive sites we explored were the Blue Hole and Half Moon Caye, which took about 2.5 hours 
+                        by boat. When we weren't diving, Carter and I had fun exploring the rest of the island, and the surrounding islands.
+                    </p>
+                </div>
+            </section>
+            <section>
+                <div class = "grid-item">
+                    <figure>
+                        <video width="320" height="240" controls>
+                            <source :src="videos[0].src" :type="videos[0].type">
+                        {{videos[0].alt}}
+                        </video>
+                        <figcaption>{{videos[0].alt}}</figcaption>
+                    </figure>
+                </div>
+                <div class = "grid-item">
+                <header><h2>Diving</h2></header>
+                    <p>
+                        I was very surprised by the number of sharks we saw while diving in Belize! Luckily they were primarily Nurse and Reef sharks, which were 
+                        generally friendly and uninterested in humans. We saw lots of other types of aquatic life, including stingrays, crabs, lobsters, eels, and many types of tropical fish.
+                    </p>
+                </div>
+            </section>
+            <section>
+                <div class = "grid-item">
+                    <figure>
+                        <video width="320" height="240" controls>
+                            <source :src="videos[1].src" :type="videos[1].type">
+                            {{videos[1].alt}}
+                        </video>
+                        <figcaption>{{videos[1].alt}}</figcaption>
+                    </figure>
+                </div>
+                <div class = "grid-item">
+                <header><h2>Caye Caulker</h2></header>
+                <p>
+                    One morning, we took a water taxi to the nearby island Caye Caluker. Years ago, a hurricane physically split the island into a north and a south side.
+                    The resulting water gap between the two sides of the island is called The Split. Here's a video of me jumping off a platform into The Split!
+                </p> 
+                </div>
+            </section>
+        </article>
+        <footer>
+            <p>©2022. Jillian Turner. All Rights Reserved.</p>
+        </footer>
+    </div>
 </div>
+<script src="../js/script.js"></script>
 </body>
 </html>

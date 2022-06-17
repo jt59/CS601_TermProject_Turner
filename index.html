@@ -9,59 +9,65 @@
         @import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
     </style>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul class = "nav_links">
-                <li><a href = "index.html">Welcome</a></li>
-                <li><a href = "html/history.html">History</a></li>
-                <li><a href = "html/san_pedro.html" >San Pedro</a></li>
-                <li><a href = "html/caves_branch.html">Caves Branch</a></li>
-                <li><a href = "html/gallery.html">Gallery</a></li> 
-            </ul>
-        </nav>
-    </header>
-    <div class = "wrapper">
-    <h1 class = "bold">Jillian and Carter's Trip to Belize</h1>
-    
-    <article>
-        <section class = "grid-container">
-            <div class = "grid-item">
-                <figure>
-                    <img src = "images/jillian_intro.jpg" alt="Watching the Sunset in San Pedro" >
-                    <figcaption>Watching the Sunset in San Pedro</figcaption>
-                </figure>
-            </div>
-            <div class = "grid-item">
-            <header><h2>Introduction</h2></header>
-            <p>Hello! My name is Jillian, and I recently went on a trip to Belize, Central America with my boyfriend, Carter. 
-                We flew out from Newark, New Jersey early on Saturday morning, April 23rd. We landed on the mainland in Belize City, 
-                then hopped onto a mini plan for a 14-minute ride over to the island of San Pedro. We spent a week there before flying 
-                back to the mainland to explore the Jungle Region along the Caves Branch River. We spent a few days at a Jungle Lodge 
-                near Caves Branch before flying back home on May 3rd. </p>
-            </div>     
-        </section>
-        <section class = "grid-container">
-            <div class ="grid-item">
-                <figure>
-                    <img src = "images/diving_intro.jpg" alt="Carter and Me on a Dive" width="300" height="250">
-                    <figcaption>Carter and Me on a Dive</figcaption>
-                </figure>
-            </div>
-            <div class = "grid-item">
-            <header><h2>Why Belize?</h2></header>
-            <p>Carter and I got our scuba diving certifications last fall, and we were looking for a place to dive. After some online
-                research, we settled on Belize. Belize has a few world-renowned dive spotes, including Half Moon Caye and the Blue Hole. As we planned our trip,
-               we learned about all the wonderful things Belize has to offer beyond scuba diving, including Mayan ruins, naturally-occuring sink-holes,
-               incredible jungle wildlife, and hikable limestone caves. Another plus of Belize is that the predominant language spoken in Belize is English.
-               I am not fluent in Spanish, so this made navigating a foreign country much more manageable for me.</p>
-            </div>
-        </section>
-    </article>
-    <footer>
-        <p>©2022. Jillian Turner. All Rights Reserved.</p>
-    </footer>
-    </div>
+    <div id="app">
+        <header>
+            <nav>
+                <ul class = "nav_links">
+                    <li><a href = "index.html">Welcome</a></li>
+                    <li><a href = "html/history.html">History</a></li>
+                    <li><a href = "html/san_pedro.html" >San Pedro</a></li>
+                    <li><a href = "html/caves_branch.html">Caves Branch</a></li>
+                    <li><a href = "html/gallery.html">Gallery</a></li>
+                    <li><a href = "html/contact_form.html">Contact</a></li> 
+                    <li><a href = "html/weather.html">Weather</a></li>  
+                </ul>
+            </nav>
+        </header>
+        <div class = "wrapper">
+        <h1 class = "bold">Jillian and Carter's Trip to Belize </h1>
+        
+        <article  class = "grid-container">
+            <section>
+                <div class = "grid-item">
+                    <figure>
+                        <img :src="images[0].src" :alt="images[0].alt" >
+                        <figcaption>{{images[0].alt}}</figcaption>
+                    </figure>
+                </div>
+                <div class = "grid-item">
+                <header><h2>Introduction</h2></header>
+                <p>Hello! My name is Jillian, and I recently went on a trip to Belize, Central America with my boyfriend, Carter. 
+                    We flew out from Newark, New Jersey early on Saturday morning, April 23rd. We landed on the mainland in Belize City, 
+                    then hopped onto a mini plan for a 14-minute ride over to the island of San Pedro. We spent a week there before flying 
+                    back to the mainland to explore the Jungle Region along the Caves Branch River. We spent a few days at a Jungle Lodge 
+                    near Caves Branch before flying back home on May 3rd. </p>
+                </div>     
+            </section>
+            <section>
+                <div class ="grid-item">
+                    <figure>
+                        <img :src="images[1].src" :alt="images[1].alt">
+                        <figcaption>{{images[1].alt}}</figcaption>
+                    </figure>
+                </div>
+                <div class = "grid-item">
+                <header><h2>Why Belize?</h2></header>
+                <p>Carter and I got our scuba diving certifications last fall, and we were looking for a place to dive. After some online
+                    research, we settled on Belize. Belize has a few world-renowned dive spotes, including Half Moon Caye and the Blue Hole. As we planned our trip,
+                we learned about all the wonderful things Belize has to offer beyond scuba diving, including Mayan ruins, naturally-occuring sink-holes,
+                incredible jungle wildlife, and hikable limestone caves. Another plus of Belize is that the predominant language spoken in Belize is English.
+                I am not fluent in Spanish, so this made navigating a foreign country much more manageable for me.</p>
+                </div>
+            </section>
+        </article>
+        <footer>
+            <p>©2022. Jillian Turner. All Rights Reserved.</p>
+        </footer>
+        </div>
+        </div>
+    <script src="js/script.js"></script>
 </body>
 </html>

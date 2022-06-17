@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+    </style>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <nav>
+                <ul class = "nav_links">
+                    <li><a href = "../index.html">Welcome</a></li>
+                    <li><a href = "history.html">History</a></li>
+                    <li><a href = "san_pedro.html" >San Pedro</a></li>
+                    <li><a href = "caves_branch.html">Caves Branch</a></li>
+                    <li><a href = "gallery.html">Gallery</a></li>
+                    <li><a href = "contact_form.html">Contact</a></li>
+                    <li><a href = "weather.html">Weather</a></li> 
+                </ul>
+            </nav>
+        </header>
+        <div class = "wrapper">
+        <h1 class = "bold">Contact Me </h1>
+        <h2 v-if="!formElements.submitted">Have any questions about my trip? Let me know and I'll get back to you!</h2>
+        <h2 v-if="formElements.submitted" id="submittedForm">Thanks, {{formElements.storedName}}! Your inquiry has been received.</h2>
+
+        <p  id="errors" v-if="formErrors.length">
+            <b>Please correct the following error(s):</b>
+            <ul>
+              <li id="errorItem" v-for="error in formErrors">{{ error }}</li>
+            </ul>
+        </p>
+
+
+        <form name="myForm" method="post" @submit="validateContact">
+            <section id="flexForm">
+                <div class="contactInput">
+                    <label for="firstName" >First name: </label>
+                    <input type="text" id="firstName" name="firstName" v-model="formElements.firstName">
+                </div>
+
+                <div class="contactInput">
+                    <label for="lastName">Last name: </label>
+                    <input type="text" id="lastName" name="lastName" v-model="formElements.lastName">
+                </div>
+                <div class="contactInput">
+                    <label for="facilitator">Email: </label>
+                    <input type="text" id="email" name="email" v-model="formElements.email">
+                </div>
+                <div class="contactInput">
+                    <label for="inquiry">Inquiry: </label>
+                    <textarea id="inquiry" name="inquiry" v-model="formElements.inquiry"></textarea>
+                </div>
+
+            </section>
+    
+            <div id="submitContainer">
+                <input type="submit" value="Submit" id="submitButton">
+            </div>
+            
+        </form>
+        
+       
+        </article>
+        <footer>
+            <p>©2022. Jillian Turner. All Rights Reserved.</p>
+        </footer>
+        </div>
+        </div>
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -47,10 +47,6 @@ nav {
   background-color: cornflowerblue;
 }
 
-.nav_links {
-  list-style: none; 
-}
-
 
 .nav_links li a {
   transition: all 0.3s ease;
@@ -63,11 +59,76 @@ nav {
   color:#317873;
 }
 
+#galleryFilters {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+#galleryFilters input{
+  margin-left: 15px;
+}
+
+.contactInput{
+  margin: 2% 5%;
+}
+
+#flexForm {
+  display:flex;
+  flex-direction: column;
+}
+
+#submitContainer {
+  text-align:center;
+}
+
+#submitButton {
+  font-size: 1em;
+  background-color: cornflowerblue;
+  border-radius: 10%;
+}
+
+#errors {
+  color: red;
+}
+
+#errorItem {
+  color:red;
+}
+
+#submittedForm {
+  color: green;
+}
+
+#weatherDiv {
+  text-align: center;
+  margin-top: 10%;
+}
+
+#weatherDiv img {
+  height: 100px;
+  width: 100px;
+}
+
 
 /* largest screen size 
 1200 px+
 Implements Flexbox to better organize content*/
 @media screen and (min-width: 1200px){
+
+  iframe {
+    width:800px;
+    height:400px;
+  }
+
+  textarea {
+    height: 60px;
+    width: 700px;
+  }
+
+  #submitButton {
+    height: 70px;
+    width: 120px;
+  }
 
 h1 {
   text-align: center;
@@ -93,17 +154,29 @@ h2 {
 
   .grid-container {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .grid-item {
     padding-top: 20px;
-    margin-right: 50px;
+    margin-right: 40px;
   }
 
   table {
     margin-right: 350px;
   }
+
+  .contactInput label{
+    vertical-align:top;
+    margin-right: 5px;
+    font-size: 1.5em;
+  }
+  
+  .contactInput input {
+    font-size: 1.5em;
+  }
+  
 
 }
 
@@ -111,6 +184,32 @@ h2 {
 730px to 1200px
 Decreases font sizes and stops using flexbox */
 @media screen and (max-width: 1200px){
+
+  iframe {
+    width:600px;
+    height:300px;
+  }
+
+  .grid-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .grid-item {
+    padding-top: 20px;
+    margin-right: 40px;
+  }
+
+  textarea {
+    height: 60px;
+    width: 500px;
+  }
+
+  #submitButton {
+    height: 50px;
+    width: 100px;
+  }
 
   .nav_links li {
     font-size: 1.3em;
@@ -133,14 +232,15 @@ Decreases font sizes and stops using flexbox */
     font-size: 1.7em;
   }
 
-  /* img{
-    height: calc(var(--fig-height)*0.5);
-    width:calc(var(--fig-width)*0.5);
+  .contactInput label{
+    vertical-align:top;
+    margin-right: 5px;
+    font-size: 1.5em;
   }
-  video{
-    height: calc(var(--fig-height)*0.5);
-    width:calc(var(--fig-width)*0.5);
-  } */
+  
+  .contactInput input {
+    font-size: 1.5em;
+  }
 
 }
 
@@ -148,6 +248,22 @@ Decreases font sizes and stops using flexbox */
 730px and less
 decreases font size */
 @media screen and (max-width: 730px){
+
+  iframe {
+    width:400px;
+    height:200px;
+  }
+  
+  textarea {
+    height: 60px;
+    width: 300px;
+  }
+
+  #submitButton {
+    height: 30px;
+    width: 80px;
+  }
+
   .nav_links li {
     font-size: 1.5em;
     padding: 5px 10px;
@@ -175,7 +291,20 @@ decreases font size */
   .gallery {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
   }
+
+  .contactInput label{
+    vertical-align:top;
+    margin-right: 5px;
+    font-size: 20px;
+  }
+  
+  .contactInput input {
+    font-size: 20px;
+  }
+  
+
 }
 
 
