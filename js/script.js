@@ -158,7 +158,7 @@ const App = Vue.createApp({
 
     },
     created() {
-            fetch('http://api.weatherapi.com/v1/current.json?key=7824e3099e864fc08d0225650221506&q=Belize City&aqi=no')
+            fetch('https://api.weatherapi.com/v1/current.json?key=7824e3099e864fc08d0225650221506&q=Belize City&aqi=no')
             .then(response => {
                 if (response.status <= 400) {
                     return response.json();
@@ -170,7 +170,7 @@ const App = Vue.createApp({
             .catch(error => console.error(`Error: ${error}`) )
             .finally(console.log("Complete"));
 
-            fetch('http://api.weatherapi.com/v1/current.json?key=7824e3099e864fc08d0225650221506&q=San Pedro, Belize&aqi=no')
+            fetch('https://api.weatherapi.com/v1/current.json?key=7824e3099e864fc08d0225650221506&q=San Pedro, Belize&aqi=no')
             .then(response => {
                 if (response.status <= 400) {
                     return response.json();
