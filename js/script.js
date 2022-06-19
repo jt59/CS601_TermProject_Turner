@@ -112,15 +112,17 @@ const App = Vue.createApp({
         },
 
         weatherAttributesBC: {
+            lat: 17.494690,
+            lon: -88.18972,
             city: "",
-            country:"",
             temp:"",
             conditions:"",
             feelslike:"",
         },
         weatherAttributesSP: {
+            lat: 17.917210,
+            lon: -87.971069,
             city: "",
-            country:"",
             temp:"",
             conditions:"",
             feelslike:"",
@@ -163,7 +165,7 @@ const App = Vue.createApp({
 
     },
     created() {
-            fetch('https://api.openweathermap.org/data/2.5/weather?lat=17.5&lon=18.1&appid=' + this.weatherAPI.key)
+            fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + this.weatherAttributesBC.lat + '&lon=' + this.weatherAttributesBC.lon + '&appid=' + this.weatherAPI.key + '&units=imperial')
             .then(response => {
                 if (response.status <= 400) {
                     return response.json();
@@ -175,7 +177,7 @@ const App = Vue.createApp({
             .catch(error => console.error(`Error: ${error}`) )
             .finally(console.log("Complete"));
 
-            fetch('https://api.weatherapi.com/v1/current.json?key=7824e3099e864fc08d0225650221506&q=San Pedro, Belize&aqi=no')
+            fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + this.weatherAttributesSP.lat + '&lon=' + this.weatherAttributesSP.lon + '&appid=' + this.weatherAPI.key + '&units=imperial')
             .then(response => {
                 if (response.status <= 400) {
                     return response.json();
@@ -190,21 +192,16 @@ const App = Vue.createApp({
     methods: {
 
         postToDomBC: function(data) {
-            alert(data);
-            console.log(data);
+            this.weatherAttributesBC.city = data.name;
+            this.weatherAttributesBC.temp =  Math.round(data.main.temp);
             this.weatherAttributesBC.conditions = data.weather[0].description;
-            // this.weatherAttributesBC.city = this.weatherAPI.key;
-            // this.weatherAttributesBC.country = data.location.country;
-            // this.weatherAttributesBC.temp = data.current.temp_f;
-            // this.weatherAttributesBC.conditions = data.current.condition.text;
-            // this.weatherAttributesBC.feelslike = data.current.feelslike_f;
+            this.weatherAttributesBC.feelslike =  Math.round(data.main.feels_like);
         },
         postToDomSP: function(data) {
-            this.weatherAttributesSP.city = data.location.name;
-            this.weatherAttributesSP.country = data.location.country;
-            this.weatherAttributesSP.temp = data.current.temp_f;
-            this.weatherAttributesSP.conditions = data.current.condition.text;
-            this.weatherAttributesSP.feelslike = data.current.feelslike_f;
+            this.weatherAttributesSP.city = data.name;
+            this.weatherAttributesSP.temp =  Math.round(data.main.temp);
+            this.weatherAttributesSP.conditions = data.weather[0].description;
+            this.weatherAttributesSP.feelslike =  Math.round(data.main.feels_like);
         },
 
         validateContact: function(e) {
