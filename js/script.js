@@ -106,6 +106,11 @@ const App = Vue.createApp({
         },
         
 
+        weatherAPI: {
+            key: '16aaeace31d8e0bebc216fdd9ed91ada'
+
+        },
+
         weatherAttributesBC: {
             city: "",
             country:"",
@@ -158,7 +163,7 @@ const App = Vue.createApp({
 
     },
     created() {
-            fetch('https://api.weatherapi.com/v1/current.json?key=7824e3099e864fc08d0225650221506&q=Belize City&aqi=no')
+            fetch('https://api.openweathermap.org/data/2.5/weather?lat=17.5&lon=18.1&appid=' + this.weatherAPI.key)
             .then(response => {
                 if (response.status <= 400) {
                     return response.json();
@@ -185,11 +190,14 @@ const App = Vue.createApp({
     methods: {
 
         postToDomBC: function(data) {
-            this.weatherAttributesBC.city = data.location.name;
-            this.weatherAttributesBC.country = data.location.country;
-            this.weatherAttributesBC.temp = data.current.temp_f;
-            this.weatherAttributesBC.conditions = data.current.condition.text;
-            this.weatherAttributesBC.feelslike = data.current.feelslike_f;
+            alert(data);
+            console.log(data);
+            this.weatherAttributesBC.conditions = data.weather[0].description;
+            // this.weatherAttributesBC.city = this.weatherAPI.key;
+            // this.weatherAttributesBC.country = data.location.country;
+            // this.weatherAttributesBC.temp = data.current.temp_f;
+            // this.weatherAttributesBC.conditions = data.current.condition.text;
+            // this.weatherAttributesBC.feelslike = data.current.feelslike_f;
         },
         postToDomSP: function(data) {
             this.weatherAttributesSP.city = data.location.name;
