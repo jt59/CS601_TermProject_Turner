@@ -129,7 +129,7 @@ const App = Vue.createApp({
         }
         
 
-        }
+        };
     },
 
     computed: {
@@ -207,7 +207,6 @@ const App = Vue.createApp({
         validateContact: function(e) {
             this.formElements.submitted = false;
             this.formElements.storedName = null;
-            const form = e.event;
             this.formErrors = [];
             if(!this.formElements.firstName) {
                 this.formErrors.push("First name required");
@@ -243,8 +242,8 @@ const App = Vue.createApp({
         checkedAll:  function () {
             if (this.checkedLocations.length < this.galleryFilters.length) {
                 this.checkedLocations = [];
-                for (const location in this.galleryFilters) {
-                    this.checkedLocations.push(this.galleryFilters[location].location);
+                for (let i=0;i < this.galleryFilters.length; i++) {
+                    this.checkedLocations.push(this.galleryFilters[i].location);
                 } 
             } else {
                 this.checkedLocations = [];

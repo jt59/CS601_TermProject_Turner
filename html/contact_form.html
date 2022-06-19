@@ -31,7 +31,7 @@
         <h2 v-if="!formElements.submitted">Have any questions about my trip? Let me know and I'll get back to you!</h2>
         <h2 v-if="formElements.submitted" id="submittedForm">Thanks, {{formElements.storedName}}! Your inquiry has been received.</h2>
 
-        <p  id="errors" v-if="formErrors.length">
+        <p id="errors" v-if="formErrors.length">
             <b>Please correct the following error(s):</b>
             <ul>
               <li id="errorItem" v-for="error in formErrors">{{ error }}</li>
@@ -51,7 +51,7 @@
                     <input type="text" id="lastName" name="lastName" v-model="formElements.lastName">
                 </div>
                 <div class="contactInput">
-                    <label for="facilitator">Email: </label>
+                    <label for="email">Email: </label>
                     <input type="text" id="email" name="email" v-model="formElements.email">
                 </div>
                 <div class="contactInput">
@@ -67,8 +67,6 @@
             
         </form>
         
-       
-        </article>
         <footer>
             <p>©2022. Jillian Turner. All Rights Reserved.</p>
         </footer>

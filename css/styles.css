@@ -99,12 +99,12 @@ nav {
   color: green;
 }
 
-#weatherDiv {
+.weatherDiv {
   text-align: center;
   margin-top: 10%;
 }
 
-#weatherDiv img {
+.weatherDiv img {
   height: 100px;
   width: 100px;
 }
