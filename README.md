@@ -1,5 +1,7 @@
 Project Title: Jillian's Trip to Belize
 
+Hosted on Netlify: https://musical-mousse-1a8cbf.netlify.app
+
 Decription:
 This website informs users of my recent to trip to Belize, Central America. It consists of 7 pages:
 1) Welcome
@@ -68,32 +70,28 @@ JS script:
     - checkedAll function adds all checks to the gallery filter checkboxes if the user select "All"
     - uncheckAll unchecks the "All" if the user unselects any option
 
+Extra Credit:
+- Styled layout using flexbox
+- Connects to external weather API to display weather information
+
 File Structure:
-CS601_HW1_JillianTurner
-├── README.md                   
-├── index.html                   
-├── html 
-│   ├── history.html                     
-│   ├── san_pedro.html  
-│   ├── caves_branch.html
-│   ├── gallery.html                  
-├── images
-│   ├── caves_branch_jungle.jpg                     
-│   ├── diving_intro.jpg 
-│   ├── history_border.png
-│   ├── history_lamanai.jpg
-│   ├── history_map.png
-│   ├── jillian_dive_boat.jpg
-│   ├── jillian_intro.jpg
-│   ├── san_pedro_ramons.png
-├── videos
-│   ├── caves_branch_black_hole.mov
-│   ├── caves_branch_waterfalls.mov
-│   ├── san_pedro_caye_caulker.mov
-│   ├── san_pedro_shark.mov    
-├── css     
-│   ├── styles.css          
+```
+CS601_Term_Project_Turner
+├─ .DS_Store
+├─ .vscode
+│  └─ launch.json
+├─ README.md
+├─ css
+│  └─ styles.css
+├─ html
+│  ├─ caves_branch.html
+│  ├─ contact_form.html
+│  ├─ gallery.html
+│  ├─ history.html
+│  ├─ san_pedro.html
+│  └─ weather.html
+├─ index.html
+└─ js
+   └─ script.js
 
-
-
-
+```
